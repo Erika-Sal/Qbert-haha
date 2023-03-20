@@ -31,7 +31,7 @@ public class GamePanel extends JPanel implements MouseListener {
     final int scale = 3;
     final int tileSize = originalTileSize * scale;
     final int maxScreenCol = 18;
-    final int maxScreenRow = 12;
+    final int maxScreenRow = 15;
     final int screenWidth = tileSize * maxScreenCol;
     final int screenHeight = tileSize * maxScreenRow;
 
@@ -88,7 +88,7 @@ public class GamePanel extends JPanel implements MouseListener {
         Graphics2D g2 = (Graphics2D) g;
 
         Image img1 = Toolkit.getDefaultToolkit().getImage("Qbert map.PNG"); /*the image cannot be in the SRC folder*/
-        g2.drawImage(img1, 0 , 0 , 870 , 580 , this);
+        g2.drawImage(img1, 0 , 0 , 870 , 760 , this);
 
 
 
