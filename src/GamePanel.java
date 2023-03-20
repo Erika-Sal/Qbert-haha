@@ -88,7 +88,7 @@ public class GamePanel extends JPanel implements MouseListener {
         Graphics2D g2 = (Graphics2D) g;
 
         Image img1 = Toolkit.getDefaultToolkit().getImage("Qbert map.PNG"); /*the image cannot be in the SRC folder*/
-        g2.drawImage(img1, 0 , 0 , 870 , 760 , this);
+        g2.drawImage(img1, 0 , 0 , 870 , 800 , this);
 
 
 
