@@ -105,16 +105,40 @@ public class GamePanel extends JPanel implements MouseListener {
 
         Rectangle2D one = new Rectangle(50,60, 150,200);
 
-        int xPoly1[] = {150,250,325,375};
-        int yPoly1[] = {150,100,125,225};
+        int xPoly24[] = {325, 270, 325, 380};
+        int yPoly24[] = {590,615,645,615};
+        Polygon poly24 = new Polygon(xPoly24, yPoly24, xPoly24.length);
+        g2.setColor(Color.YELLOW);
+        g2.drawPolygon(poly24);
+        g2.fill(poly24);
 
-        Polygon poly = new Polygon(xPoly1, yPoly1, xPoly1.length);
-        g2.setColor(Color.BLUE);
-        g2.drawPolygon(poly);
-        g2.fill(poly);
+        int xPoly25[] = {435, 380, 435, 490};
+        int yPoly25[] = {590,615,645,615};
+        Polygon poly25 = new Polygon(xPoly25, yPoly25, xPoly25.length);
+        g2.setColor(Color.YELLOW);
+        g2.drawPolygon(poly25);
+        g2.fill(poly25);
 
+        int xPoly26[] = {550, 495, 550, 605};
+        int yPoly26[] = {590,615,645,615};
+        Polygon poly26 = new Polygon(xPoly26, yPoly26, xPoly26.length);
+        g2.setColor(Color.YELLOW);
+        g2.drawPolygon(poly26);
+        g2.fill(poly26);
 
+        int xPoly27[] = {660, 605, 660, 715};
+        int yPoly27[] = {590,615,645,615};
+        Polygon poly27 = new Polygon(xPoly27, yPoly27, xPoly27.length);
+        g2.setColor(Color.YELLOW);
+        g2.drawPolygon(poly27);
+        g2.fill(poly27);
 
+        int xPoly28[] = {775,720,775,825};
+        int yPoly28[] = {590,615,645,615};
+        Polygon poly28 = new Polygon(xPoly28, yPoly28, xPoly28.length);
+        g2.setColor(Color.YELLOW);
+        g2.drawPolygon(poly28);
+        g2.fill(poly28);
 
 
     }
