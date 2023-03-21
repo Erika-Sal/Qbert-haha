@@ -22,7 +22,18 @@ import javax.imageio.ImageIO;
         import java.net.URL;
         import java.awt.Rectangle;
         import java.awt.Shape;
-
+import java.awt.Color;
+import java.awt.Dimension;
+import java.awt.EventQueue;
+import java.awt.Graphics;
+import java.awt.Graphics2D;
+import java.awt.Shape;
+import java.awt.geom.AffineTransform;
+import java.awt.geom.Path2D;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.UIManager;
+import javax.swing.UnsupportedLookAndFeelException;
 
         import java.util.concurrent.TimeUnit;
 
@@ -83,6 +94,8 @@ public class GamePanel extends JPanel implements MouseListener {
         gameThread.start();
     }
 
+
+
     public void paintComponent(Graphics g)  {
         super.paintComponent(g);
         Graphics2D g2 = (Graphics2D) g;
@@ -90,12 +103,22 @@ public class GamePanel extends JPanel implements MouseListener {
         Image img1 = Toolkit.getDefaultToolkit().getImage("Qbert map.PNG"); /*the image cannot be in the SRC folder*/
         g2.drawImage(img1, 0 , 0 , 870 , 800 , this);
 
+        Rectangle2D one = new Rectangle(50,60, 150,200);
+
+        int xPoly1[] = {150,250,325,375};
+        int yPoly1[] = {150,100,125,225};
+
+        Polygon poly = new Polygon(xPoly1, yPoly1, xPoly1.length);
+        g2.setColor(Color.BLUE);
+        g2.drawPolygon(poly);
+        g2.fill(poly);
 
 
 
 
 
     }
+
 
 
     @Override
