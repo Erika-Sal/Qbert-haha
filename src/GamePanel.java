@@ -68,7 +68,7 @@ public class GamePanel extends JPanel implements MouseListener {
     boolean two = false;
 
 
-    JLabel player1;
+    bert p1 = new bert(400,100, this);
     public GamePanel() {
 
         this.setPreferredSize(new Dimension(screenWidth, screenHeight));
@@ -98,12 +98,175 @@ public class GamePanel extends JPanel implements MouseListener {
 
     public void paintComponent(Graphics g)  {
         super.paintComponent(g);
+
+
         Graphics2D g2 = (Graphics2D) g;
 
+        g2.setColor(Color.YELLOW);
         Image img1 = Toolkit.getDefaultToolkit().getImage("Qbert map.PNG"); /*the image cannot be in the SRC folder*/
         g2.drawImage(img1, 0 , 0 , 870 , 800 , this);
 
         Rectangle2D one = new Rectangle(50,60, 150,200);
+
+
+
+        int xPoly1[] = {435,493,435,382};
+        int yPoly1[] = {128,154,180,152};
+        Polygon poly1 = new Polygon(xPoly1, yPoly1, xPoly1.length);
+        g2.drawPolygon(poly1);
+        g2.fill(poly1);
+
+        int xPoly2[] = {377,435,382,326};
+        int yPoly2[] = {203,232,260,232};
+        Polygon poly2 = new Polygon(xPoly2, yPoly2, xPoly2.length);
+        g2.drawPolygon(poly2);
+        g2.fill(poly2);
+
+        int xPoly3[] = {495,550,495,440};
+        int yPoly3[] = {203,232,258,232};
+        Polygon poly3 = new Polygon(xPoly3, yPoly3, xPoly3.length);
+        g2.drawPolygon(poly3);
+        g2.fill(poly3);
+
+        int xPoly4[] = {326,382,326,270};
+        int yPoly4[] = {280,310,340,310};
+        Polygon poly4 = new Polygon(xPoly4, yPoly4, xPoly4.length);
+        g2.drawPolygon(poly4);
+        g2.fill(poly4);
+
+        int xPoly5[] = {435,492,435,382};
+        int yPoly5[] = {280,308,338,310};
+        Polygon poly5 = new Polygon(xPoly5, yPoly5, xPoly5.length);
+        g2.setColor(Color.YELLOW);
+        g2.drawPolygon(poly5);
+        g2.fill(poly5);
+
+        int xPoly6[] = {550,605,550,495};
+        int yPoly6[] = {280,308,338,310};
+        Polygon poly6 = new Polygon(xPoly6, yPoly6, xPoly6.length);
+        g2.setColor(Color.YELLOW);
+        g2.drawPolygon(poly6);
+        g2.fill(poly6);
+
+        int xPoly7[] = {270,326,272,215};
+        int yPoly7[] = {358,386,413,386};
+        Polygon poly7 = new Polygon(xPoly7, yPoly7, xPoly7.length);
+        g2.setColor(Color.YELLOW);
+        g2.drawPolygon(poly7);
+        g2.fill(poly7);
+
+        int xPoly8[] = {382,326,382,435};
+        int yPoly8[] = {358,386,413,386};
+        Polygon poly8 = new Polygon(xPoly8, yPoly8, xPoly8.length);
+        g2.setColor(Color.YELLOW);
+        g2.drawPolygon(poly8);
+        g2.fill(poly8);
+
+        int xPoly9[] = {496,551,494,435};
+        int yPoly9[] = {356,386,413,386};
+        Polygon poly9 = new Polygon(xPoly9, yPoly9, xPoly9.length);
+        g2.setColor(Color.YELLOW);
+        g2.drawPolygon(poly9);
+        g2.fill(poly9);
+
+        int xPoly10[] = {605,550,605,660};
+        int yPoly10[] = {358,386,413,386};
+        Polygon poly10 = new Polygon(xPoly10, yPoly10, xPoly10.length);
+        g2.setColor(Color.YELLOW);
+        g2.drawPolygon(poly10);
+        g2.fill(poly10);
+
+        int xPoly11[] = {215,270,215,160};
+        int yPoly11[] = {435,464,490,462};
+        Polygon poly11 = new Polygon(xPoly11, yPoly11, xPoly11.length);
+        g2.setColor(Color.YELLOW);
+        g2.drawPolygon(poly11);
+        g2.fill(poly11);
+
+        int xPoly12[] = {327,380,327,270};
+        int yPoly12[] = {435,462,490,462};
+        Polygon poly12 = new Polygon(xPoly12, yPoly12, xPoly12.length);
+        g2.drawPolygon(poly12);
+        g2.fill(poly12);
+
+        int xPoly13[] = {438,496,438,380};
+        int yPoly13[] = {435,462,490,462};
+        Polygon poly13 = new Polygon(xPoly13, yPoly13, xPoly13.length);
+        g2.setColor(Color.YELLOW);
+        g2.drawPolygon(poly13);
+        g2.fill(poly13);
+
+        int xPoly14[] = {552,605,552,494};
+        int yPoly14[] = {435,462,490,462};
+        Polygon poly14 = new Polygon(xPoly14, yPoly14, xPoly14.length);
+        g2.setColor(Color.YELLOW);
+        g2.drawPolygon(poly14);
+        g2.fill(poly14);
+
+        int xPoly15[] = {660,716,660,605};
+        int yPoly15[] = {435,462,490,462};
+        Polygon poly15 = new Polygon(xPoly15, yPoly15, xPoly15.length);
+        g2.setColor(Color.YELLOW);
+        g2.drawPolygon(poly15);
+        g2.fill(poly15);
+
+
+        int xPoly16[] = {160,105,160,211};
+        int yPoly16[] = {515,540,570,539};
+        Polygon poly16 = new Polygon(xPoly16, yPoly16, xPoly16.length);
+        g2.setColor(Color.YELLOW);
+        g2.drawPolygon(poly16);
+        g2.fill(poly16);
+
+        int xPoly17[] = {273,215,270,323};
+        int yPoly17[] = {513,539,570,539};
+        Polygon poly17 = new Polygon(xPoly17, yPoly17, xPoly17.length);
+        g2.setColor(Color.YELLOW);
+        g2.drawPolygon(poly17);
+        g2.fill(poly17);
+
+        int xPoly18[] = {383,325,380,435};
+        int yPoly18[] = {513,540,570,539};
+        Polygon poly18 = new Polygon(xPoly18, yPoly18, xPoly18.length);
+        g2.setColor(Color.YELLOW);
+        g2.drawPolygon(poly18);
+        g2.fill(poly18);
+
+        int xPoly19[] = {495,440,495,545};
+        int yPoly19[] = {515,540,565,539};
+        Polygon poly19 = new Polygon(xPoly19, yPoly19, xPoly19.length);
+        g2.setColor(Color.YELLOW);
+        g2.drawPolygon(poly19);
+        g2.fill(poly19);
+
+        int xPoly20[] = {605,550,605,660};
+        int yPoly20[] = {515,540,565,539};
+        Polygon poly20 = new Polygon(xPoly20, yPoly20, xPoly20.length);
+        g2.setColor(Color.YELLOW);
+        g2.drawPolygon(poly20);
+        g2.fill(poly20);
+
+        int xPoly21[] = {715,660,715,770};
+        int yPoly21[] = {515,540,565,539};
+        Polygon poly21 = new Polygon(xPoly21, yPoly21, xPoly21.length);
+        g2.setColor(Color.YELLOW);
+        g2.drawPolygon(poly21);
+        g2.fill(poly21);
+
+
+        int xPoly22[] = {105, 47, 105, 160};
+        int yPoly22[] = {590,615,645,615};
+        Polygon poly22 = new Polygon(xPoly22, yPoly22, xPoly22.length);
+        g2.setColor(Color.YELLOW);
+        g2.drawPolygon(poly22);
+        g2.fill(poly22);
+
+        int xPoly23[] = {215, 157, 215, 270};
+        int yPoly23[] = {590,615,645,615};
+        Polygon poly23 = new Polygon(xPoly23, yPoly23, xPoly23.length);
+        g2.setColor(Color.YELLOW);
+        g2.drawPolygon(poly23);
+        g2.fill(poly23);
 
         int xPoly24[] = {325, 270, 325, 380};
         int yPoly24[] = {590,615,645,615};
@@ -139,7 +302,7 @@ public class GamePanel extends JPanel implements MouseListener {
         g2.setColor(Color.YELLOW);
         g2.drawPolygon(poly28);
         g2.fill(poly28);
-
+        p1.drawSelf(g2);
 
     }
 
