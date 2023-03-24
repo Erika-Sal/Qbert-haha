@@ -1,7 +1,6 @@
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.MouseEvent;
-import java.awt.event.MouseListener;
+import java.awt.event.*;
 import java.util.Random;
 import javax.imageio.ImageIO;
         import javax.swing.*;
@@ -37,7 +36,7 @@ import javax.swing.UnsupportedLookAndFeelException;
 
         import java.util.concurrent.TimeUnit;
 
-public class GamePanel extends JPanel implements MouseListener {
+public class GamePanel extends JPanel implements ActionListener, KeyListener {
     final int originalTileSize = 16;
     final int scale = 3;
     final int tileSize = originalTileSize * scale;
@@ -66,10 +65,14 @@ public class GamePanel extends JPanel implements MouseListener {
 
     boolean one = false;
     boolean two = false;
-
+Timer t = new Timer(5,this);
 
     bert p1 = new bert(400,100, this);
     public GamePanel() {
+        t.start();
+        addKeyListener(this);
+        setFocusable(true);
+        setFocusTraversalKeysEnabled(false);
 
         this.setPreferredSize(new Dimension(screenWidth, screenHeight));
 
@@ -308,28 +311,43 @@ public class GamePanel extends JPanel implements MouseListener {
 
 
 
+
+
+
+
     @Override
-    public void mouseClicked(MouseEvent e) {
+    public void actionPerformed(ActionEvent e) {
 
     }
 
     @Override
-    public void mousePressed(MouseEvent e) {
+    public void keyTyped(KeyEvent e) {
 
     }
 
     @Override
-    public void mouseReleased(MouseEvent e) {
-
+    public void keyPressed(KeyEvent e) {
+    int code = e.getKeyCode();
+    if(code == KeyEvent.VK_UP){
+        p1.up();
+        repaint();
+    }
+    if(code==KeyEvent.VK_DOWN){
+        p1.down();
+        repaint();
+    }
+    if(code==KeyEvent.VK_LEFT){
+        p1.left();
+        repaint();
+    }
+    if(code==KeyEvent.VK_RIGHT){
+        p1.right();
+        repaint();
+    }
     }
 
     @Override
-    public void mouseEntered(MouseEvent e) {
-
-    }
-
-    @Override
-    public void mouseExited(MouseEvent e) {
+    public void keyReleased(KeyEvent e) {
 
     }
 }
