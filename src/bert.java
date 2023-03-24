@@ -61,10 +61,12 @@ double x, y;
     final int twentyEightX = 750;
     final int twentyEightY = 560;
 
-    public bert(int xVal, int yVal, GamePanel gp){
+    boolean[] spaces;
+    public bert(int xVal, int yVal, GamePanel gp, boolean[] bool){
         x = xVal;
         y = yVal;
         this.gp = gp;
+        spaces = bool;
     }
 
     public void drawSelf(Graphics g){
@@ -77,66 +79,87 @@ double x, y;
         if (x == twoX && y == twoY) {
             x = oneX;
             y = oneY;
+            spaces[0] = true;
         } else if (x == fourX && y == fourY) {
             x = twoX;
             y = twoY;
+            spaces[1] = true;
         } else if (x == fiveX && y == fiveY) {
             x = threeX;
             y = threeY;
+            spaces[2] = true;
         } else if (x == sevenX && y == sevenY) {
             x = fourX;
             y = fourY;
+            spaces[3] = true;
         } else if (x == eightX && y == eightY) {
             x = fiveX;
             y = fiveY;
+            spaces[4] = true;
         } else if (x == nineX && y == nineY) {
             x = sixX;
             y = sixY;
+            spaces[5] = true;
         } else if (x == elevenX && y == elevenY) {
             x = sevenX;
             y = sevenY;
+            spaces[6] = true;
         }else if(x==twelveX && y==twelveY){
             x = eightX;
             y = eightY;
+            spaces[7] = true;
         }else if(x==thirteenX && y==thirteenY){
             x = nineX;
             y = nineY;
+            spaces[8] = true;
         }else if(x==fourteenX && y==fourteenY){
             x = tenX;
             y = tenY;
+            spaces[9] = true;
         }else if(x==sixteenX && y==sixteenY){
             x = elevenX;
             y = elevenY;
+            spaces[10] = true;
         }else if(x==seventeenX && y==seventeenY){
             x = twelveX;
             y = twelveY;
+            spaces[11] = true;
         }else if(x==eighteenX && y==eighteenY){
             x = thirteenX;
             y = thirteenY;
+            spaces[12] = true;
         }else if(x==nineteenX && y==nineteenY){
             x = fourteenX;
             y = fourteenY;
+            spaces[13] = true;
         }else if(x==twentyX && y==twentyY){
             x = fifteenX;
             y = fifteenY;
+            spaces[14] = true;
         }else if(x==twentyTwoX && y==twentyTwoY){
             x = sixteenX;
             y = sixteenY;
+            spaces[15] = true;
         }else if(x==twentyThreeX && y==twentyThreeY){
             x = seventeenX;
             y = seventeenY;
+            spaces[16] = true;
         }else if(x==twentyFourX && y==twentyFourY){
             x = eighteenX;
             y = eighteenY;
+            spaces[17] = true;
         }else if(x==twentyFiveX && y==twentyFiveY){
             x=nineteenX;
             y=nineteenY;
+            spaces[18] = true;
         }else if(x==twentySixX && y==twentySixY){
             x=twentyX;
             y=twentyY;
+            spaces[19] = true;
         }else if(x==twentySevenX && y==twentySevenY){
             x=twentyOneX;
             y=twentyOneY;
+            spaces[20] = true;
         }
     }
 
@@ -144,66 +167,87 @@ double x, y;
        if(x==oneX && y==oneY){
            x = twoX;
            y = twoY;
+           spaces[1] = true;
        }else if(x==twoX && y==twoY){
            x=fourX;
            y=fourY;
+           spaces[3] = true;
        }else if(x==threeX && y==threeY){
            x=fiveX;
            y=fiveY;
+           spaces[4] = true;
        }else if(x==fourX && y==fourY){
            x=sevenX;
            y=sevenY;
+           spaces[6] = true;
        }else if(x==fiveX && y==fiveY){
            x=eightX;
            y=eightY;
+           spaces[7] = true;
        }else if(x==sixX && y==sixY){
            x=nineX;
            y=nineY;
+           spaces[8] = true;
        }else if(x==sevenX && y==sevenY){
            x=elevenX;
            y=elevenY;
+           spaces[10] = true;
        }else if(x==eightX && y==eightY){
            x=twelveX;
            y=twelveY;
+           spaces[11] = true;
        }else if(x==nineX && y==nineY){
            x=thirteenX;
            y=thirteenY;
+           spaces[12] = true;
        }else if(x==tenX && y==tenY){
            x=fourteenX;
            y=fourteenY;
+           spaces[13] = true;
        }else if(x==elevenX && y==elevenY){
            x=sixteenX;
            y=sixteenY;
+           spaces[15] = true;
        }else if(x==twelveX && y==twelveY){
            x=seventeenX;
            y=seventeenY;
+           spaces[16] = true;
        }else if(x==thirteenX && y==thirteenY){
            x=eighteenX;
            y=eighteenY;
+           spaces[17] = true;
        }else if(x==fourteenX && y==fourteenY){
            x=nineteenX;
            y=nineteenY;
+           spaces[18] = true;
        }else if(x==fifteenX && y==fifteenY){
            x=twentyX;
            y=twentyY;
+           spaces[19] = true;
        }else if(x==sixteenX && y==sixteenY){
            x=twentyTwoX;
            y=twentyTwoY;
+           spaces[21] = true;
        }else if(x==seventeenX && y==seventeenY){
            x=twentyThreeX;
            y=twentyThreeY;
+           spaces[22] = true;
        }else if(x==eighteenX && y==eighteenY){
            x=twentyFourX;
            y=twentyFourY;
+           spaces[23] = true;
        }else if(x==nineteenX && y==nineteenY){
            x=twentyFiveX;
            y=twentyFiveY;
+           spaces[24] = true;
        }else if(x==twentyX && y==twentyY){
            x=twentySixX;
            y=twentySixY;
+           spaces[25] = true;
        }else if(x==twentyOneX && y==twentyOneY){
            x=twentySevenX;
            y=twentySevenY;
+           spaces[26] = true;
        }
     }
 
@@ -211,66 +255,87 @@ double x, y;
         if(x==oneX && y==oneY) {
             x = threeX;
             y = threeY;
+            spaces[2] = true;
         }else if(x==twoX && y==twoY){
             x=fiveX;
             y=fiveY;
+            spaces[4] = true;
         }else if(x==threeX && y==threeY){
             x=sixX;
             y=sixY;
+            spaces[5] = true;
         }else if(x==fourX && y==fourY){
             x=eightX;
             y=eightY;
+            spaces[7] = true;
         }else if(x==fiveX && y==fiveY){
             x=nineX;
             y=nineY;
+            spaces[8] = true;
         }else if(x==sixX && y==sixY){
             x=tenX;
             y=tenY;
+            spaces[9] = true;
         }else if(x==sevenX && y==sevenY){
             x=twelveX;
             y=twelveY;
+            spaces[11] = true;
         }else if(x==eightX && y==eightY){
            x=thirteenX;
            y=thirteenY;
+            spaces[12] = true;
         }else if(x==nineX && y==nineY){
             x=fourteenX;
             y=fourteenY;
+            spaces[13] = true;
         }else if(x==tenX && y==tenY){
             x=fifteenX;
             y=fifteenY;
+            spaces[14] = true;
         }else if(x==elevenX && y==elevenY){
             x=seventeenX;
             y=seventeenY;
+            spaces[16] = true;
         }else if(x==twelveX && y==twelveY){
             x=eighteenX;
             y=eighteenY;
+            spaces[17] = true;
         }else if(x==thirteenX && y==thirteenY){
             x=nineteenX;
             y=nineteenY;
+            spaces[18] = true;
         }else if(x==fourteenX && y==fourteenY){
             x=twentyX;
             y=twentyY;
+            spaces[19] = true;
         }else if(x==fifteenX && y==fifteenY){
             x=twentyOneX;
             y=twentyOneY;
+            spaces[20] = true;
         }else if(x==sixteenX && y==sixteenY){
             x=twentyThreeX;
             y=twentyThreeY;
+            spaces[22] = true;
         }else if(x==seventeenX && y==seventeenY){
             x=twentyFourX;
             y=twentyFourY;
+            spaces[23] = true;
         }else if(x==eighteenX && y==eighteenY){
             x=twentyFiveX;
             y=twentyFiveY;
+            spaces[24] = true;
         }else if(x==nineteenX && y==nineteenY){
             x=twentySixX;
             y=twentySixY;
+            spaces[25] = true;
         }else if(x==twentyX && y==twentyY){
             x=twentySevenX;
             y=twentySevenY;
+            spaces[26] = true;
         }else if(x==twentyOneX && y==twentyOneY){
             x=twentyEightX;
             y=twentyEightY;
+            spaces[27] = true;
         }
     }
 
@@ -278,69 +343,93 @@ double x, y;
         if(x==threeX&& y==threeY){
             x=oneX;
             y=oneY;
-
+            spaces[0] = true;
         }else if(x==fiveX && y==fiveY){
             x=twoX;
             y=twoY;
+            spaces[1] = true;
         }else if(x==sixX && y==sixY){
             x=threeX;
             y=threeY;
+            spaces[2] = true;
         }else if(x==eightX && y==eightY){
             x=fourX;
             y=fourY;
+            spaces[3] = true;
         }else if(x==nineX && y==nineY){
             x=fiveX;
             y=fiveY;
+            spaces[4] = true;
         }else if(x==tenX && y==tenY){
             x=sixX;
             y=sixY;
+            spaces[5] = true;
         }else if(x==twelveX && y==twelveY){
             x=sevenX;
             y=sevenY;
+            spaces[6] = true;
         }else if(x==thirteenX && y==thirteenY){
             x=eightX;
             y=eightY;
+            spaces[7] = true;
         }else if(x==fourteenX && y==fourteenY){
             x=nineX;
             y=nineY;
+            spaces[8] = true;
         }else if(x==fifteenX && y==fifteenY){
             x=tenX;
             y=tenY;
+            spaces[9] = true;
         }else if(x==seventeenX && y==seventeenY){
             x=elevenX;
             y=elevenY;
+            spaces[10] = true;
         }else if(x==eighteenX && y==seventeenY){
             x=twelveX;
             y=twelveY;
+            spaces[11] = true;
         }else if(x==nineteenX && y==nineteenY){
             x=thirteenX;
             y=thirteenY;
+            spaces[12] = true;
         }else if(x==twentyX && y==twentyY){
             x=fourteenX;
             y=fourteenY;
+            spaces[13] = true;
         }else if(x==twentyOneX && y==twentyOneY){
             x=fifteenX;
             y=fifteenY;
+            spaces[14] = true;
         }else if(x==twentyThreeX && y==twentyThreeY){
             x=sixteenX;
             y=sixteenY;
+            spaces[15] = true;
         }else if(x==twentyFourX && y==twentyFourY){
             x=seventeenX;
             y=seventeenY;
+            spaces[16] = true;
         }else if(x==twentyFiveX && y==twentyFiveY){
             x=eighteenX;
             y=eighteenY;
+            spaces[17] = true;
         }else if(x==twentySixX && y==twentySixY){
             x=nineteenX;
             y=nineteenY;
+            spaces[18] = true;
         }else if(x==twentySevenX && y==twentySevenY){
             x=twentyX;
             y=twentyY;
+            spaces[19] = true;
         }else if(x==twentyEightX && y==twentyEightY){
             x=twentyOneX;
             y=twentyOneY;
+            spaces[20] = true;
         }
 
-        }
+    }
+
+    public boolean[] getSpaces(){
+        return spaces;
+    }
 }
 
