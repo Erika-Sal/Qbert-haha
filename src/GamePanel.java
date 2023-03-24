@@ -66,6 +66,7 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener {
     boolean one = false;
     boolean two = false;
 Timer t = new Timer(5,this);
+    boolean wait = false;
     boolean[] lives = {true, true, true};
     boolean[] spaces = {false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false};
     bert p1 = new bert(400,100, this, spaces, lives);
@@ -363,11 +364,29 @@ Timer t = new Timer(5,this);
             g2.fill(poly28);
 
         }
-        p1.drawSelf(g2);
 
+        p1.drawSelf(g2);
         if(p1.win()){
             Image img3 = Toolkit.getDefaultToolkit().getImage("QbertLevelComplete.PNG"); /*the image cannot be in the SRC folder*/
             g2.drawImage(img3, 0 , 0 , 870 , 800 , this);
+
+        }
+
+        if(p1.getLives()[2]){
+            Image img4 = Toolkit.getDefaultToolkit().getImage("heart.PNG"); /*the image cannot be in the SRC folder*/
+            g2.drawImage(img4, 40 , 40 , 70 , 70 , this);
+
+        }
+
+        if(p1.getLives()[1]){
+            Image img5 = Toolkit.getDefaultToolkit().getImage("heart2.PNG"); /*the image cannot be in the SRC folder*/
+            g2.drawImage(img5,120 , 40 , 70 , 70 , this);
+
+        }
+
+        if(p1.getLives()[0]){
+            Image img6 = Toolkit.getDefaultToolkit().getImage("heart2.PNG"); /*the image cannot be in the SRC folder*/
+            g2.drawImage(img6, 200 , 40 , 70 , 70 , this);
 
         }
 

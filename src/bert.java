@@ -60,6 +60,7 @@ double x, y;
     final int twentySevenY = 560;
     final int twentyEightX = 750;
     final int twentyEightY = 560;
+    boolean alive = true;
 
     boolean[] spaces;
     boolean[] lives;
@@ -72,8 +73,11 @@ double x, y;
     }
 
     public void drawSelf(Graphics g){
-        Image qBert = Toolkit.getDefaultToolkit().getImage("bert.png"); /*the image cannot be in the SRC folder*/
-        g.drawImage(qBert, (int)x, (int)y, 70,70,gp );
+        if(alive){
+            Image qBert = Toolkit.getDefaultToolkit().getImage("bert.png"); /*the image cannot be in the SRC folder*/
+            g.drawImage(qBert, (int)x, (int)y, 70,70,gp );
+        }
+
     }
 
 
@@ -449,7 +453,19 @@ double x, y;
     }
 
     public void die(){
+        alive = false;
+        if(lives[2]){
+            lives[2] = false;
+        }else if(lives[1]){
+            lives[1] = false;
+        }else{
+            lives[0] = false;
+        }
 
+    }
+
+    public boolean[] getLives(){
+        return lives;
     }
 }
 
