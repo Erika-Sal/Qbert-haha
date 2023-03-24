@@ -364,6 +364,10 @@ Timer t = new Timer(5,this);
         }
         p1.drawSelf(g2);
 
+        if(p1.win()){
+
+        }
+
 
     }
 

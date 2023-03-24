@@ -431,5 +431,14 @@ double x, y;
     public boolean[] getSpaces(){
         return spaces;
     }
+
+    public boolean win(){
+        for(int i = 0; i < spaces.length; i++){
+            if(spaces[i] == false){
+                return false;
+            }
+        }
+        return true;
+    }
 }
 
