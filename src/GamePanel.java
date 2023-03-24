@@ -66,8 +66,9 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener {
     boolean one = false;
     boolean two = false;
 Timer t = new Timer(5,this);
+    boolean[] lives = {true, true, true};
     boolean[] spaces = {false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false};
-    bert p1 = new bert(400,100, this, spaces);
+    bert p1 = new bert(400,100, this, spaces, lives);
     public GamePanel() {
         t.start();
         addKeyListener(this);
@@ -365,6 +366,8 @@ Timer t = new Timer(5,this);
         p1.drawSelf(g2);
 
         if(p1.win()){
+            Image img3 = Toolkit.getDefaultToolkit().getImage("QbertLevelComplete.PNG"); /*the image cannot be in the SRC folder*/
+            g2.drawImage(img3, 0 , 0 , 870 , 800 , this);
 
         }
 

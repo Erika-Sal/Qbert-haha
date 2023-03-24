@@ -62,11 +62,13 @@ double x, y;
     final int twentyEightY = 560;
 
     boolean[] spaces;
-    public bert(int xVal, int yVal, GamePanel gp, boolean[] bool){
+    boolean[] lives;
+    public bert(int xVal, int yVal, GamePanel gp, boolean[] bool, boolean[] l){
         x = xVal;
         y = yVal;
         this.gp = gp;
         spaces = bool;
+        lives = l;
     }
 
     public void drawSelf(Graphics g){
@@ -340,6 +342,11 @@ double x, y;
     }
 
     public void left() {
+        if(x==oneX && y==oneY){
+            x-=60;
+            y-=80;
+            die();
+        }
         if(x==threeX&& y==threeY){
             x=oneX;
             y=oneY;
@@ -439,6 +446,10 @@ double x, y;
             }
         }
         return true;
+    }
+
+    public void die(){
+
     }
 }
 
