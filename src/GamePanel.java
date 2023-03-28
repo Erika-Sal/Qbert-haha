@@ -66,10 +66,10 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener {
     boolean one = false;
     boolean two = false;
 Timer t = new Timer(5,this);
-    boolean wait = false;
+    boolean dead = false;
     boolean[] lives = {true, true, true};
     boolean[] spaces = {false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false};
-    bert p1 = new bert(400,100, this, spaces, lives);
+    bert p1 = new bert(400,100, this, spaces, lives, dead);
     public GamePanel() {
         t.start();
         addKeyListener(this);
@@ -87,8 +87,16 @@ Timer t = new Timer(5,this);
         gameThread = new Thread() {
             public void run() {
                         try {
-                            repaint();
-                            gameThread.currentThread().sleep(5 * 1000);
+                            while(!p1.win() || !p1.getLives()[2]) {
+                                repaint();
+                                gameThread.currentThread().sleep(5 * 1000);
+                                if (!p1.getAlive()) {
+                                    System.out.println("AHHH");
+                                    gameThread.currentThread().sleep(1 * 1000);
+                                    p1.setAlive(true);
+                                    p1.setXY();
+                                }
+                            }
                         } catch (InterruptedException e) {
                             throw new RuntimeException(e);
                         }
@@ -365,7 +373,9 @@ Timer t = new Timer(5,this);
 
         }
 
-        p1.drawSelf(g2);
+            p1.drawSelf(g2);
+
+
         if(p1.win()){
             Image img3 = Toolkit.getDefaultToolkit().getImage("QbertLevelComplete.PNG"); /*the image cannot be in the SRC folder*/
             g2.drawImage(img3, 0 , 0 , 870 , 800 , this);

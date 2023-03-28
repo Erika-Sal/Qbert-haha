@@ -64,12 +64,14 @@ double x, y;
 
     boolean[] spaces;
     boolean[] lives;
-    public bert(int xVal, int yVal, GamePanel gp, boolean[] bool, boolean[] l){
+    boolean dead;
+    public bert(int xVal, int yVal, GamePanel gp, boolean[] bool, boolean[] l, boolean d){
         x = xVal;
         y = yVal;
         this.gp = gp;
         spaces = bool;
         lives = l;
+        dead = d;
     }
 
     public void drawSelf(Graphics g){
@@ -82,11 +84,15 @@ double x, y;
 
 
     public void up() {
-        if (x == twoX && y == twoY) {
+        if(x==oneX && y==oneY){
+            die();
+        }else if (x == twoX && y == twoY) {
             x = oneX;
             y = oneY;
             spaces[0] = true;
-        } else if (x == fourX && y == fourY) {
+        } else if(x==threeX && y==threeY){
+            die();
+        }else if (x == fourX && y == fourY) {
             x = twoX;
             y = twoY;
             spaces[1] = true;
@@ -94,7 +100,9 @@ double x, y;
             x = threeX;
             y = threeY;
             spaces[2] = true;
-        } else if (x == sevenX && y == sevenY) {
+        } else if(x==sixX && y==sixY){
+            die();
+        }else if (x == sevenX && y == sevenY) {
             x = fourX;
             y = fourY;
             spaces[3] = true;
@@ -106,7 +114,9 @@ double x, y;
             x = sixX;
             y = sixY;
             spaces[5] = true;
-        } else if (x == elevenX && y == elevenY) {
+        } else if(x==tenX && y==tenY){
+            die();
+        }else if (x == elevenX && y == elevenY) {
             x = sevenX;
             y = sevenY;
             spaces[6] = true;
@@ -122,6 +132,8 @@ double x, y;
             x = tenX;
             y = tenY;
             spaces[9] = true;
+        }else if(x==fifteenX && y==fifteenY){
+            die();
         }else if(x==sixteenX && y==sixteenY){
             x = elevenX;
             y = elevenY;
@@ -142,6 +154,8 @@ double x, y;
             x = fifteenX;
             y = fifteenY;
             spaces[14] = true;
+        }else if(x==twentyOneX && y==twentyOneY){
+            die();
         }else if(x==twentyTwoX && y==twentyTwoY){
             x = sixteenX;
             y = sixteenY;
@@ -166,6 +180,8 @@ double x, y;
             x=twentyOneX;
             y=twentyOneY;
             spaces[20] = true;
+        }else if(x==twentyEightX && y==twentyEightY){
+            die();
         }
     }
 
@@ -254,6 +270,34 @@ double x, y;
            x=twentySevenX;
            y=twentySevenY;
            spaces[26] = true;
+       }else if(x==twentyTwoX && y==twentyTwoY){
+           x+=60;
+           y+=80;
+           die();
+       }else if(x==twentyThreeX && y==twentyThreeY){
+           x-=60;
+           y-=80;
+           die();
+       }else if(x==twentyFourX && y==twentyFourY){
+           x-=60;
+           y-=80;
+           die();
+       }else if(x==twentyFiveX && y==twentyFiveY){
+           x-=60;
+           y-=80;
+           die();
+       }else if(x==twentySixX && y==twentySixY){
+           x-=60;
+           y-=80;
+           die();
+       }else if(x==twentySevenX && y==twentySevenY){
+           x-=60;
+           y-=80;
+           die();
+       }else if(x==twentyEightX && y==twentyEightY){
+           x-=60;
+           y-=80;
+           die();
        }
     }
 
@@ -342,6 +386,34 @@ double x, y;
             x=twentyEightX;
             y=twentyEightY;
             spaces[27] = true;
+        }else if(x==twentyTwoX && y==twentyTwoY){
+            x+=60;
+            y+=80;
+            die();
+        }else if(x==twentyThreeX && y==twentyThreeY){
+            x-=60;
+            y-=80;
+            die();
+        }else if(x==twentyFourX && y==twentyFourY){
+            x-=60;
+            y-=80;
+            die();
+        }else if(x==twentyFiveX && y==twentyFiveY){
+            x-=60;
+            y-=80;
+            die();
+        }else if(x==twentySixX && y==twentySixY){
+            x-=60;
+            y-=80;
+            die();
+        }else if(x==twentySevenX && y==twentySevenY){
+            x-=60;
+            y-=80;
+            die();
+        }else if(x==twentyEightX && y==twentyEightY){
+            x-=60;
+            y-=80;
+            die();
         }
     }
 
@@ -350,11 +422,18 @@ double x, y;
             x-=60;
             y-=80;
             die();
-        }
-        if(x==threeX&& y==threeY){
+        }else if(x==twoX && y==twoY){
+            x-=60;
+            y-=80;
+            die();
+        }else if(x==threeX&& y==threeY){
             x=oneX;
             y=oneY;
             spaces[0] = true;
+        }else if(x==fourX && y==fourY){
+            x-=60;
+            y-=80;
+            die();
         }else if(x==fiveX && y==fiveY){
             x=twoX;
             y=twoY;
@@ -363,6 +442,10 @@ double x, y;
             x=threeX;
             y=threeY;
             spaces[2] = true;
+        }else if(x==sevenX && y==sevenY){
+            x-=60;
+            y-=80;
+            die();
         }else if(x==eightX && y==eightY){
             x=fourX;
             y=fourY;
@@ -375,6 +458,10 @@ double x, y;
             x=sixX;
             y=sixY;
             spaces[5] = true;
+        }else if(x==elevenX && y==elevenY){
+            x-=60;
+            y-=80;
+            die();
         }else if(x==twelveX && y==twelveY){
             x=sevenX;
             y=sevenY;
@@ -391,6 +478,10 @@ double x, y;
             x=tenX;
             y=tenY;
             spaces[9] = true;
+        }else if(x==sixteenX && y==sixteenY){
+            x-=60;
+            y-=80;
+            die();
         }else if(x==seventeenX && y==seventeenY){
             x=elevenX;
             y=elevenY;
@@ -411,6 +502,10 @@ double x, y;
             x=fifteenX;
             y=fifteenY;
             spaces[14] = true;
+        }else if(x==twentyTwoX && y==twentyTwoY){
+            x-=60;
+            y-=80;
+            die();
         }else if(x==twentyThreeX && y==twentyThreeY){
             x=sixteenX;
             y=sixteenY;
@@ -463,11 +558,19 @@ double x, y;
         }else{
             lives[0] = false;
         }
+        x=0;
+        y=0;
 
     }
 
     public boolean[] getLives(){
         return lives;
     }
+    public void setXY(){
+        x = oneX;
+        y = oneY;
+    }
+    public void setAlive(boolean d){alive = d;}
+    public boolean getAlive(){return alive;}
 }
 
