@@ -439,6 +439,8 @@ double x, y;
 
     }
 
+    //hi
+
     public boolean[] getSpaces(){
         return spaces;
     }
