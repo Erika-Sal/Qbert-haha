@@ -87,15 +87,20 @@ Timer t = new Timer(5,this);
         gameThread = new Thread() {
             public void run() {
                         try {
-                            while(!p1.win() || !p1.getLives()[2]) {
+                            while(!p1.win() || p1.getSpaces()[0]) {
                                 repaint();
-                                gameThread.currentThread().sleep(5 * 1000);
-                                if (!p1.getAlive()) {
-                                    System.out.println("AHHH");
-                                    gameThread.currentThread().sleep(1 * 1000);
-                                    p1.setAlive(true);
-                                    p1.setXY();
+                                System.out.println("AHHH");
+
+                                if(!p1.getAlive()){
+                                    gameThread.currentThread().sleep(2 * 1000);
+                                    if(!p1.getLose()){
+                                        p1.setXY();
+                                        p1.setAlive(true);
+                                    }
                                 }
+
+
+
                             }
                         } catch (InterruptedException e) {
                             throw new RuntimeException(e);

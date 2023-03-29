@@ -3,6 +3,7 @@ import java.awt.geom.Point2D;
 
 public class bert {
 double x, y;
+    boolean lose = false;
     GamePanel gp;
     final int oneX = 400;
     final int oneY = 100;
@@ -557,12 +558,15 @@ double x, y;
             lives[1] = false;
         }else{
             lives[0] = false;
+            lose = true;
         }
         x=0;
         y=0;
 
     }
-
+public boolean getLose(){
+        return lose;
+}
     public boolean[] getLives(){
         return lives;
     }
