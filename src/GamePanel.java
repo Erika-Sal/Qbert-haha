@@ -3,24 +3,24 @@ import java.awt.*;
 import java.awt.event.*;
 import java.util.Random;
 import javax.imageio.ImageIO;
-        import javax.swing.*;
-        import java.awt.*;
-        import java.awt.event.MouseEvent;
-        import java.awt.event.MouseListener;
-        import java.awt.font.FontRenderContext;
-        import java.awt.font.GlyphVector;
-        import java.awt.geom.AffineTransform;
-        import java.awt.geom.Rectangle2D;
-        import java.awt.image.*;
-        import java.awt.image.renderable.RenderableImage;
-        import java.io.IOException;
-        import java.text.AttributedCharacterIterator;
-        import java.util.Map;
-        import java.util.Random;
-        import java.util.ResourceBundle;
-        import java.net.URL;
-        import java.awt.Rectangle;
-        import java.awt.Shape;
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
+import java.awt.font.FontRenderContext;
+import java.awt.font.GlyphVector;
+import java.awt.geom.AffineTransform;
+import java.awt.geom.Rectangle2D;
+import java.awt.image.*;
+import java.awt.image.renderable.RenderableImage;
+import java.io.IOException;
+import java.text.AttributedCharacterIterator;
+import java.util.Map;
+import java.util.Random;
+import java.util.ResourceBundle;
+import java.net.URL;
+import java.awt.Rectangle;
+import java.awt.Shape;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.EventQueue;
@@ -34,7 +34,7 @@ import javax.swing.JPanel;
 import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
 
-        import java.util.concurrent.TimeUnit;
+import java.util.concurrent.TimeUnit;
 
 public class GamePanel extends JPanel implements ActionListener, KeyListener {
     final int originalTileSize = 16;
@@ -65,11 +65,12 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener {
 
     boolean one = false;
     boolean two = false;
-Timer t = new Timer(5,this);
+    Timer t = new Timer(5,this);
     boolean dead = false;
     boolean[] lives = {true, true, true};
     boolean[] spaces = {false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false};
     bert p1 = new bert(400,100, this, spaces, lives, dead);
+    ball ball1 = new ball(400,100, this, dead);
     public GamePanel() {
         t.start();
         addKeyListener(this);
@@ -86,25 +87,28 @@ Timer t = new Timer(5,this);
 
         gameThread = new Thread() {
             public void run() {
-                        try {
-                            while(!p1.win() || p1.getSpaces()[0]) {
-                                repaint();
-                                System.out.println("AHHH");
-
-                                if(!p1.getAlive()){
-                                    gameThread.currentThread().sleep(2 * 1000);
-                                    if(!p1.getLose()){
-                                        p1.setXY();
-                                        p1.setAlive(true);
-                                    }
-                                }
+                try {
+                    while(!p1.win() || p1.getSpaces()[0]) {
+                        repaint();
+                        ball1.pick();
+                        gameThread.currentThread().sleep(1 * 1000);
 
 
-
+                        if(!p1.getAlive()){
+                            gameThread.currentThread().sleep(2 * 1000);
+                            if(!p1.getLose()){
+                                p1.setXY();
+                                p1.setAlive(true);
                             }
-                        } catch (InterruptedException e) {
-                            throw new RuntimeException(e);
+
                         }
+
+
+
+                    }
+                } catch (InterruptedException e) {
+                    throw new RuntimeException(e);
+                }
             }
         };
 
@@ -378,7 +382,9 @@ Timer t = new Timer(5,this);
 
         }
 
-            p1.drawSelf(g2);
+
+        p1.drawSelf(g2);
+        ball1.drawSelf(g2);
 
 
         if(p1.win()){
@@ -405,6 +411,14 @@ Timer t = new Timer(5,this);
 
         }
 
+        if(p1.getLose()){
+            Image gameover = Toolkit.getDefaultToolkit().getImage("gameover.png"); /*the image cannot be in the SRC folder*/
+            g.drawImage(gameover, 0 , 0 , 870 , 800 , this);
+
+            Image lose = Toolkit.getDefaultToolkit().getImage("lose.gif"); /*the image cannot be in the SRC folder*/
+            g.drawImage(lose, 500 , 280 , 350 , 450 , this);
+        }
+
 
     }
 
@@ -426,23 +440,23 @@ Timer t = new Timer(5,this);
 
     @Override
     public void keyPressed(KeyEvent e) {
-    int code = e.getKeyCode();
-    if(code == KeyEvent.VK_UP){
-        p1.up();
-        repaint();
-    }
-    if(code==KeyEvent.VK_DOWN){
-        p1.down();
-        repaint();
-    }
-    if(code==KeyEvent.VK_LEFT){
-        p1.left();
-        repaint();
-    }
-    if(code==KeyEvent.VK_RIGHT){
-        p1.right();
-        repaint();
-    }
+        int code = e.getKeyCode();
+        if(code == KeyEvent.VK_UP){
+            p1.up();
+            repaint();
+        }
+        if(code==KeyEvent.VK_DOWN){
+            p1.down();
+            repaint();
+        }
+        if(code==KeyEvent.VK_LEFT){
+            p1.left();
+            repaint();
+        }
+        if(code==KeyEvent.VK_RIGHT){
+            p1.right();
+            repaint();
+        }
     }
 
     @Override
@@ -450,5 +464,6 @@ Timer t = new Timer(5,this);
 
     }
 }
+
 
 

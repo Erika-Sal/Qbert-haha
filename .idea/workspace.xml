@@ -5,6 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ed9cae85-54f2-4b02-84d0-7c4aa173620e" name="Changes" comment="hiiii">
+      <change afterPath="$PROJECT_DIR$/gameover.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lose.gif" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/GamePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GamePanel.java" afterDir="false" />
     </list>
@@ -168,7 +170,14 @@
       <option name="project" value="LOCAL" />
       <updated>1680028937650</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="hiiii">
+      <created>1680113748520</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1680113748520</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -191,7 +200,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/GamePanel.java</url>
-          <line>275</line>
+          <line>272</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
       </breakpoints>
