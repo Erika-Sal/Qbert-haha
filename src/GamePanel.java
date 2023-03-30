@@ -70,7 +70,7 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener {
     boolean[] lives = {true, true, true};
     boolean[] spaces = {false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false};
     bert p1 = new bert(400,100, this, spaces, lives, dead);
-    ball ball1 = new ball(400,100, this, dead);
+    ball ball1 = new ball(350,170, this, dead);
     public GamePanel() {
         t.start();
         addKeyListener(this);
@@ -89,18 +89,16 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener {
             public void run() {
                 try {
                     while(!p1.win() || p1.getSpaces()[0]) {
+
                         repaint();
                         ball1.pick();
                         gameThread.currentThread().sleep(1 * 1000);
-
-
                         if(!p1.getAlive()){
                             gameThread.currentThread().sleep(2 * 1000);
                             if(!p1.getLose()){
                                 p1.setXY();
                                 p1.setAlive(true);
                             }
-
                         }
 
 
@@ -393,19 +391,19 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener {
 
         }
 
-        if(p1.getLives()[2]){
+        if(p1.getLives()[2]&& !p1.win()){
             Image img4 = Toolkit.getDefaultToolkit().getImage("heart.PNG"); /*the image cannot be in the SRC folder*/
             g2.drawImage(img4, 40 , 40 , 70 , 70 , this);
 
         }
 
-        if(p1.getLives()[1]){
+        if(p1.getLives()[1]&& !p1.win()){
             Image img5 = Toolkit.getDefaultToolkit().getImage("heart2.PNG"); /*the image cannot be in the SRC folder*/
             g2.drawImage(img5,120 , 40 , 70 , 70 , this);
 
         }
 
-        if(p1.getLives()[0]){
+        if(p1.getLives()[0] && !p1.win()){
             Image img6 = Toolkit.getDefaultToolkit().getImage("heart2.PNG"); /*the image cannot be in the SRC folder*/
             g2.drawImage(img6, 200 , 40 , 70 , 70 , this);
 
@@ -444,18 +442,31 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener {
         if(code == KeyEvent.VK_UP){
             p1.up();
             repaint();
+            if(p1.getX()==ball1.getX() && p1.getY() == ball1.getY()){
+                p1.die();
+            }
         }
         if(code==KeyEvent.VK_DOWN){
             p1.down();
             repaint();
+            if(p1.getX()==ball1.getX() && p1.getY() == ball1.getY()){
+                p1.die();
+            }
         }
         if(code==KeyEvent.VK_LEFT){
             p1.left();
             repaint();
+            if(p1.getX()==ball1.getX() && p1.getY() == ball1.getY()){
+                p1.die();
+            }
         }
         if(code==KeyEvent.VK_RIGHT){
             p1.right();
             repaint();
+            if(p1.getX()==ball1.getX() && p1.getY() == ball1.getY()){
+                p1.die();
+            }
+
         }
     }
 

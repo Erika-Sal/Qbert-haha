@@ -576,5 +576,12 @@ public boolean getLose(){
     }
     public void setAlive(boolean d){alive = d;}
     public boolean getAlive(){return alive;}
+
+    public int getX(){
+        return (int)x;
+    }
+    public int getY(){
+        return (int)y;
+    }
 }
 
